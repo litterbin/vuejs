@@ -1,0 +1,81 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="app">
+            {{ message }}
+        </div>
+        <div id="app2">
+            <span v-bind:title="message">
+                ...
+            </span>
+        </div>
+        <div id="app3">
+            <p v-if="seen">Show!"</p>
+        </div>
+        <div id="app4">
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+        </div>
+        <div id="app5">
+            <span>{{ message }}</span>
+            <button v-on:click="button">Click</button>
+        </div>
+        <div id="app-6">
+            <p>{{ message }}</p>
+            <input v-model="message">
+        </div>
+    </body>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+    var app = new Vue({
+            el: "#app",
+            data: {
+                message : "Hello vue!"
+            }
+    })
+    var app2 = new Vue({
+        el: "#app2",
+        data: {
+            message: "hello vvvuuueee!"
+        }
+    })
+    var app3 = new Vue({
+        el: "#app3",
+        data: {
+            seen: true
+        }
+    })
+    var app4 = new Vue({
+        el: "#app4",
+        data: {
+            todos: [
+                { text: "1"},
+                { text: "2"}
+            ]
+        }
+    })
+    var app5 = new Vue({
+        el: "#app5",
+        data: {
+            message : "Hello Vuejs!"
+        },
+        methods: {
+            button: function() {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    })
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: '안녕하세요 Vue!'
+        }
+    })
+    
+    </script>
+</html>

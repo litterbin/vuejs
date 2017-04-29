@@ -4,22 +4,16 @@
     </head>
     <body>
         <div id="app">
-            <h1>{{ message }}</h1>
-            <!--
-                Why do I use both of v-model and v-on 
-            -->
-            <input v-model="message" v-on="message" />
+            <p>{{ message }}</p>
         </div>
     </body>
     <script src="https://unpkg.com/vue"></script>
     <script>
-        var data = {
-            message: "Hello World"
-        };
-    
-        new Vue({
+        var app = new Vue({
             el: "#app",
-            data: data
+            data: {
+                message: "Hello Vue!"
+            }
         })
     </script>
 </html>
